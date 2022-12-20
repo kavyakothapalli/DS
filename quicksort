@@ -1,0 +1,10 @@
+def quicksort(array):
+    if len(array) < 2:
+        return array
+    else:
+        element = array[0]
+        less = [i for i in array[1:] if i <= element]
+        greater = [i for i in array[1:] if i > element]
+        return quicksort(less) + [element] + quicksort(greater)
+
+print(quicksort([64, 34, 25, 12, 22, 11, 90])) 
