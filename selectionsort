@@ -1,0 +1,15 @@
+def selectionsort(arr):
+    n = len(arr)
+
+    for i in range(n):
+        minindex = i
+        for j in range(i+1, n):
+            if arr[minindex] > arr[j]:
+                minindex = j
+        
+        arr[i], arr[minindex] = arr[minindex], arr[i]
+
+arr = [64, 34, 25, 12, 22, 11, 90]
+selectionsort(arr)
+
+print("Sorted array:", arr)
