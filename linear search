@@ -1,0 +1,12 @@
+def linearsearch(list, element):
+  for i in range(len(list)):
+    if list[i] == element:
+      return i
+  return -1
+list = [1, 2, 3, 4, 5]
+element = 2
+index = linearsearch(list, element)
+if index != -1:
+  print(f"{element} found at index {index}")
+else:
+  print(f"{element} not found in the list")
