@@ -1,0 +1,21 @@
+def evaluate_postfix(expression):
+    stack = []
+
+        else:
+            val1 = stack.pop()
+            val2 = stack.pop()
+            result = 0
+            if char == '+':
+                result = val1 + val2
+            elif char == '-':
+                result = val2 - val1
+            elif char == '*':
+                result = val1 * val2
+            elif char == '/':
+                result = val2 / val1
+            stack.append(result)
+
+    return stack[0]
+
+print(evaluate_postfix("23+5*"))  
+print(evaluate_postfix("53-2*"))  # Should print 4
