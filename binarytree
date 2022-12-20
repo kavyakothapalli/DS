@@ -1,0 +1,49 @@
+class Node:
+    def __init__(self, data=None):
+        self.data = data
+        self.left = None
+        self.right = None
+
+class BinaryTree:
+    def __init__(self):
+        self.root = None
+    
+    def pre_order(self, node):
+        if node is not None:
+            print(node.data)
+            self.pre_order(node.left)
+            self.pre_order(node.right)
+    
+    def in_order(self, node):
+        if node is not None:
+            self.in_order(node.left)
+            print(node.data)
+            self.in_order(node.right)
+    
+    def post_order(self, node):
+        if node is not None:
+            self.post_order(node.left)
+            self.post_order(node.right)
+            print(node.data)
+
+tree = BinaryTree()
+tree.root = Node("F")
+tree.root.left = Node("B")
+tree.root.right = Node("G")
+tree.root.left.left = Node("A")
+tree.root.left.right = Node("D")
+tree.root.left.right.left = Node("C")
+tree.root.left.right.right = Node("E")
+tree.root.right.right = Node("I")
+tree.root.right.right.left = Node("H")
+
+print("Pre-order traversal:")
+tree.pre_order(tree.root)  
+print()
+
+print("In-order traversal:")
+tree.in_order(tree.root)  
+print()
+
+print("Post-order traversal:")
+tree.post_order(tree.root) 
